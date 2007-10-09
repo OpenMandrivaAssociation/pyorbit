@@ -1,5 +1,5 @@
 %define pyver 2.3
-Summary: Python bindings for ORBit2.
+Summary: Python bindings for ORBit2
 Name: pyorbit
 Version: 2.14.3
 Release: %mkrel 1
@@ -22,7 +22,7 @@ pyorbit is an extension module for python that gives you access
 to the ORBit2 CORBA ORB.
 
 %package devel
-Summary: Files needed to build wrappers for ORBit2 addon libraries.
+Summary: Files needed to build wrappers for ORBit2 addon libraries
 Group: Development/GNOME and GTK+
 Requires: %{name} = %{version}-%release
 Requires: libORBit2-devel
