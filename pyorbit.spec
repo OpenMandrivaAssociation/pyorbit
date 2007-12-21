@@ -7,6 +7,7 @@ License: LGPL
 Group: Development/GNOME and GTK+
 URL: ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source: %{name}-%{version}.tar.bz2
+BuildRoot: %{_tmppath}/%{name}-root
 Requires: ORBit2 >= 2.4.4
 Requires: libIDL >= 0.7.1
 Requires: glib2 >= 1.3.10
