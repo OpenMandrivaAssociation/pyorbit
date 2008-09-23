@@ -1,9 +1,9 @@
 %define pyver 2.3
 Summary: Python bindings for ORBit2
 Name: pyorbit
-Version: 2.14.3
-Release: %mkrel 3
-License: LGPL
+Version: 2.24.0
+Release: %mkrel 1
+License: LGPLv2+
 Group: Development/GNOME and GTK+
 URL: ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source: %{name}-%{version}.tar.bz2
