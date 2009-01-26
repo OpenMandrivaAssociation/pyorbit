@@ -2,11 +2,12 @@
 Summary: Python bindings for ORBit2
 Name: pyorbit
 Version: 2.24.0
-Release: %mkrel 2
+Release: %mkrel 3
 License: LGPLv2+
 Group: Development/GNOME and GTK+
 URL: ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source: %{name}-%{version}.tar.bz2
+Patch0: pyorbit-2.24.0-linkage.patch
 BuildRoot: %{_tmppath}/%{name}-root
 Requires: ORBit2 >= 2.4.4
 Requires: libIDL >= 0.7.1
@@ -33,15 +34,15 @@ libraries so that they interoperate with pyorbit
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
-# gw: the configure macro doesn't work
-./configure --prefix=%_prefix --libdir=%_libdir
+%configure2_5x
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 find $RPM_BUILD_ROOT -name "*.la" -exec rm {} \;
 
 %clean
