@@ -41,9 +41,9 @@ libraries so that they interoperate with pyorbit
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
-find $RPM_BUILD_ROOT -name "*.la" -exec rm {} \;
+find %{buildroot} -name "*.la" -exec rm {} \;
 
 %clean
 rm -rf %buildroot
