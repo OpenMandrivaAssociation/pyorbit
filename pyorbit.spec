@@ -2,21 +2,18 @@
 Summary: Python bindings for ORBit2
 Name: pyorbit
 Version: 2.24.0
-Release: %mkrel 7
+Release: 8
 License: LGPLv2+
 Group: Development/GNOME and GTK+
 URL: ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source: %{name}-%{version}.tar.bz2
 Patch0: pyorbit-2.24.0-linkage.patch
-BuildRoot: %{_tmppath}/%{name}-root
-Requires: ORBit2 >= 2.4.4
-Requires: libIDL >= 0.7.1
-Requires: glib2 >= 1.3.10
-Requires: python >= %pyver
+
 Buildrequires: libpython-devel >= %pyver
 Buildrequires: libORBit2-devel >= 2.4.4
 Buildrequires: libIDL-devel >= 0.7.1
 Buildrequires: glib2-devel >= 1.3.10
+Requires: ORBit2 >= 2.4.4
 
 %description
 pyorbit is an extension module for python that gives you access
@@ -45,16 +42,11 @@ rm -rf %{buildroot}
 %makeinstall_std
 find %{buildroot} -name "*.la" -exec rm {} \;
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(755, root, root, 755)
 %doc AUTHORS NEWS README ChangeLog
 %{_libdir}/python?.?/site-packages/*
 
 %files devel
-%defattr(755, root, root, 755)
 %dir %{_includedir}/pyorbit-2
 %{_includedir}/pyorbit-2/*.h
 %{_libdir}/pkgconfig/*.pc
