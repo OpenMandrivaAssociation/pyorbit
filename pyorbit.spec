@@ -1,4 +1,5 @@
 %define pyver 2.3
+
 Summary: Python bindings for ORBit2
 Name: pyorbit
 Version: 2.24.0
@@ -9,11 +10,12 @@ URL: ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source: %{name}-%{version}.tar.bz2
 Patch0: pyorbit-2.24.0-linkage.patch
 
-Buildrequires: libpython-devel >= %pyver
-Buildrequires: libORBit2-devel >= 2.4.4
-Buildrequires: libIDL-devel >= 0.7.1
-Buildrequires: glib2-devel >= 1.3.10
+BuildRequires: libpython-devel >= %pyver
+BuildRequires: libORBit2-devel >= 2.4.4
+BuildRequires: libIDL-devel >= 0.7.1
+BuildRequires: glib2-devel >= 1.3.10
 Requires: ORBit2 >= 2.4.4
+Requires: python >= %{pyver}
 
 %description
 pyorbit is an extension module for python that gives you access
