@@ -1,0 +1,22 @@
+--- src/Makefile.am~	2008-05-01 19:36:54.000000000 +0200
++++ src/Makefile.am	2009-01-26 14:19:28.000000000 +0100
+@@ -8,7 +8,7 @@
+ common_ldflags = -module -avoid-version $(PYTHON_LDFLAGS)
+ 
+ ORBit_la_LDFLAGS = $(common_ldflags) -export-symbols-regex initORBit
+-ORBit_la_LIBADD = $(PYORBIT_LIBS) $(PYTHON_LIBS)
++ORBit_la_LIBADD = $(PYORBIT_LIBS) $(PYTHON_EMBED_LIBS)
+ ORBit_la_SOURCES = \
+   ORBitmodule.c \
+   pycorba-typecode.c \
+--- src/Makefile.in~	2008-09-23 14:31:27.000000000 +0200
++++ src/Makefile.in	2009-01-26 14:19:48.000000000 +0100
+@@ -220,7 +220,7 @@
+ pyexec_LTLIBRARIES = ORBit.la
+ common_ldflags = -module -avoid-version $(PYTHON_LDFLAGS)
+ ORBit_la_LDFLAGS = $(common_ldflags) -export-symbols-regex initORBit
+-ORBit_la_LIBADD = $(PYORBIT_LIBS) $(PYTHON_LIBS)
++ORBit_la_LIBADD = $(PYORBIT_LIBS) $(PYTHON_EMBED_LIBS)
+ ORBit_la_SOURCES = \
+   ORBitmodule.c \
+   pycorba-typecode.c \
