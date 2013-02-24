@@ -8,13 +8,10 @@ URL:		ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		pyorbit-2.24.0-linkage.patch
 Patch1:		pyorbit-2.24.0-link-against-python.patch
-Requires:	ORBit2 >= 2.4.4
-Requires:	libIDL >= 0.7.1
-Requires:	glib2 >= 1.3.10
-Buildrequires:	python-devel
-Buildrequires:	libORBit2-devel >= 2.4.4
-Buildrequires:	libIDL-devel >= 0.7.1
-Buildrequires:	glib2-devel >= 1.3.10
+Buildrequires:	pkgconfig(python2)
+Buildrequires:	pkgconfig(ORBit-2.0) pkgconfig(ORBit-imodule-2.0)
+Buildrequires:	pkgconfig(libIDL-2.0)
+Buildrequires:	pkgconfig(glib-2.0)
 
 %description
 pyorbit is an extension module for python that gives you access
@@ -24,7 +21,6 @@ to the ORBit2 CORBA ORB.
 Summary:	Files needed to build wrappers for ORBit2 addon libraries
 Group:		Development/GNOME and GTK+
 Requires:	%{name} = %{version}-%release
-Requires:	libORBit2-devel
 
 %description	devel
 This package contains files required to build wrappers for ORBit2 addon
