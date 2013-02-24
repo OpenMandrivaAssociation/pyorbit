@@ -7,6 +7,7 @@ Group:		Development/GNOME and GTK+
 URL:		ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		pyorbit-2.24.0-linkage.patch
+Patch1:		pyorbit-2.24.0-link-against-python.patch
 Requires:	ORBit2 >= 2.4.4
 Requires:	libIDL >= 0.7.1
 Requires:	glib2 >= 1.3.10
@@ -32,6 +33,8 @@ libraries so that they interoperate with pyorbit
 %prep
 %setup -q
 %patch0 -p0
+%patch1 -p1 .pylink~
+autoreconf -fi
 
 %build
 %configure2_5x

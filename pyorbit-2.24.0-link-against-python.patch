@@ -1,0 +1,11 @@
+--- pyorbit-2.24.0/configure.in~	2008-09-23 14:27:43.000000000 +0200
++++ pyorbit-2.24.0/configure.in	2013-02-24 23:42:30.014907633 +0100
+@@ -58,6 +58,8 @@ if test -n "$export_dynamic"; then
+   PYORBIT_LIBS=`echo $PYORBIT_LIBS | sed -e "s/$export_dynamic//"`
+ fi
+ 
++PYORBIT_LIBS="$PYORBIT_LIBS -lpython${PYTHON_VERSION}"
++
+ dnl add required cflags ...
+ JH_ADD_CFLAG([-Wall])
+ JH_ADD_CFLAG([-std=c9x])
