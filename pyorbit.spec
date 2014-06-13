@@ -3,7 +3,7 @@
 Summary:	Python bindings for ORBit2
 Name:		pyorbit
 Version:	2.24.0
-Release:	13
+Release:	14
 License:	LGPLv2+
 Group:		Development/GNOME and GTK+
 Url:		ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
