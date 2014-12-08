@@ -10,11 +10,11 @@ Url:		ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch0:		pyorbit-2.24.0-linkage.patch
 Patch1:		pyorbit-2.24.0-link-against-python.patch
-Buildrequires:	pkgconfig(glib-2.0)
-Buildrequires:	pkgconfig(libIDL-2.0)
-Buildrequires:	pkgconfig(ORBit-2.0)
-Buildrequires:	pkgconfig(ORBit-imodule-2.0)
-Buildrequires:	pkgconfig(python2)
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(libIDL-2.0)
+BuildRequires:	pkgconfig(ORBit-2.0)
+BuildRequires:	pkgconfig(ORBit-imodule-2.0)
+BuildRequires:	pkgconfig(python2)
 
 %description
 pyorbit is an extension module for python that gives you access
@@ -35,7 +35,8 @@ libraries so that they interoperate with pyorbit
 autoreconf -fi
 
 %build
-%configure2_5x
+export PYTHON=%{__python2}
+%configure
 %make
 
 %install
@@ -43,7 +44,7 @@ autoreconf -fi
 
 %files
 %doc AUTHORS NEWS README ChangeLog
-%{python_sitearch}/*
+%{python2_sitearch}/*
 
 %files devel
 %dir %{_includedir}/pyorbit-2
