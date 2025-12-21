@@ -10,6 +10,11 @@ Url:		ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/%{url_ver}/%{name}-%{version}.tar.bz2
 Patch0:		pyorbit-2.24.0-linkage.patch
 Patch1:		pyorbit-2.24.0-link-against-python.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(libIDL-2.0)
 BuildRequires:	pkgconfig(ORBit-2.0)
